@@ -20,6 +20,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(10, 10, 141, 71))
+        
         font = QtGui.QFont()
         font.setFamily("야놀자 야체 R")
         font.setPointSize(24)
@@ -116,6 +117,9 @@ class Ui_MainWindow(object):
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
+    QtGui.QFontDatabase.applicationFontFamilies(
+            QtGui.QFontDatabase.addApplicationFont("win_ttf/야놀자 야체 Regular.ttf")
+            )
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
