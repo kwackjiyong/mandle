@@ -18,7 +18,7 @@ class Option_Form(QtWidgets.QDialog):
         self.initUI()
     def initUI(self):
         self.frame = QtWidgets.QFrame(self)
-        self.frame.setGeometry(QtCore.QRect(10, 90, 411, 481))
+        self.frame.setGeometry(QtCore.QRect(10, 80, 411, 481))
         self.frame.setFixedSize(411, 481)
         self.frame.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.frame.setFrameShape(QtWidgets.QFrame.Box)
