@@ -12,9 +12,10 @@ class Ui_MainWindow(object):
             return resultset
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(312, 130)
-        MainWindow.setFixedSize(312, 130)
+        MainWindow.resize(312, 125)
+        MainWindow.setFixedSize(312, 125)
         #MainWindow.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
+        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
@@ -24,6 +25,9 @@ class Ui_MainWindow(object):
         font.setPointSize(24)
         font.setBold(False)
         font.setWeight(50)
+        self.pushButton_2.setStyleSheet("color: white;"
+	"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 190, 11, 255), stop:1 rgba(251, 86, 7, 255));"
+	)
         self.pushButton_2.setFont(font)
         self.pushButton_2.setObjectName("pushButton_2")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
@@ -33,6 +37,8 @@ class Ui_MainWindow(object):
         font.setPointSize(24)
         font.setBold(False)
         font.setWeight(50)
+        self.pushButton_3.setStyleSheet("border-width: 5px;"
+        )
         self.pushButton_3.setFont(font)
         self.pushButton_3.setObjectName("pushButton_3")
 
@@ -68,8 +74,13 @@ class Ui_MainWindow(object):
     #컴포넌트 텍스트 삽입    
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "맨들 - Motion Handler"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "맨들 - 모션인식 컨트롤러"))
         MainWindow.setWindowIcon(QtGui.QIcon("view/icon2.png"))
+        MainWindow.setStyleSheet("color: black;"
+                       "background-color: #ffffff;"
+                       "border-style: solid;"
+                       "border-color: #ff901E;"
+                       "border-radius: 20px")
         self.pushButton_2.setText(_translate("MainWindow", "실행"))
         self.pushButton_3.setText(_translate("MainWindow", "종료"))
         self.menu.setTitle(_translate("MainWindow", "옵션"))

@@ -20,10 +20,17 @@ class Option_Form(QtWidgets.QDialog):
         self.frame = QtWidgets.QFrame(self)
         self.frame.setGeometry(QtCore.QRect(10, 90, 411, 481))
         self.frame.setFixedSize(411, 481)
+        self.frame.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
         self.frame.setFrameShape(QtWidgets.QFrame.Box)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setStyleSheet("color: black;"
+                       "background-color: #FFFFFF;"
+                       "border-style: solid;"
+                       "border-color: #ff901E;"
+                       "border-radius: 5px")
+
         self.label_3 = QtWidgets.QLabel(self.frame)
-        self.label_3.setGeometry(QtCore.QRect(80, 20, 41, 21))
+        self.label_3.setGeometry(QtCore.QRect(60, 10, 31, 31))
 
         #첫번째줄
         self.lbl = QtWidgets.QLabel(self.frame)
@@ -31,7 +38,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox = QtWidgets.QComboBox(self.frame)
         self.comboBox.setGeometry(QtCore.QRect(200, 70, 111, 41))
         self.checkBox = QtWidgets.QCheckBox(self.frame)
-        self.checkBox.setGeometry(QtCore.QRect(340, 70, 41, 41))
+        self.checkBox.setGeometry(QtCore.QRect(340, 65, 50, 50))
         self.comboBox.addItem("key : spacebar")
         self.comboBox.addItem("key : →")
         self.comboBox.addItem("key : ←")
@@ -45,7 +52,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_2 = QtWidgets.QComboBox(self.frame)
         self.comboBox_2.setGeometry(QtCore.QRect(200, 180, 111, 41))
         self.checkBox_2 = QtWidgets.QCheckBox(self.frame)
-        self.checkBox_2.setGeometry(QtCore.QRect(340, 180, 41, 41))
+        self.checkBox_2.setGeometry(QtCore.QRect(340, 175, 50, 50))
         self.comboBox_2.addItem("key : spacebar")
         self.comboBox_2.addItem("key : →")
         self.comboBox_2.addItem("key : ←")
@@ -59,7 +66,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_3 = QtWidgets.QComboBox(self.frame)
         self.comboBox_3.setGeometry(QtCore.QRect(200, 290, 111, 41))
         self.checkBox_3 = QtWidgets.QCheckBox(self.frame)
-        self.checkBox_3.setGeometry(QtCore.QRect(340, 290, 41, 41))
+        self.checkBox_3.setGeometry(QtCore.QRect(340, 285, 50, 50))
         self.comboBox_3.addItem("key : spacebar")
         self.comboBox_3.addItem("key : →")
         self.comboBox_3.addItem("key : ←")
@@ -73,7 +80,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_4 = QtWidgets.QComboBox(self.frame)
         self.comboBox_4.setGeometry(QtCore.QRect(200, 400, 111, 41))
         self.checkBox_4 = QtWidgets.QCheckBox(self.frame)
-        self.checkBox_4.setGeometry(QtCore.QRect(340, 400, 41, 41))
+        self.checkBox_4.setGeometry(QtCore.QRect(340, 395, 50, 50))
         self.comboBox_4.addItem("key : spacebar")
         self.comboBox_4.addItem("key : →")
         self.comboBox_4.addItem("key : ←")
@@ -81,19 +88,16 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_4.addItem("key : ↓")
         self.comboBox_4.addItem("Key : f")
         
-        
+        font = QtGui.QFont()
+        font.setFamily("야놀자 야체 R")
+        font.setPointSize(18)
         #버튼
         self.pushButton = QtWidgets.QPushButton(self)
         self.pushButton.setGeometry(QtCore.QRect(320, 20, 101, 41))
-        font = QtGui.QFont()
-        font.setFamily("야놀자 야체 R")
-        font.setPointSize(18)
+        
         self.pushButton.setFont(font)
         self.pushButton_2 = QtWidgets.QPushButton(self)
         self.pushButton_2.setGeometry(QtCore.QRect(210, 20, 101, 41))
-        font = QtGui.QFont()
-        font.setFamily("야놀자 야체 R")
-        font.setPointSize(18)
         self.pushButton_2.setFont(font)
 
         #JSON에서 읽어온 설정값 세팅
@@ -106,13 +110,44 @@ class Option_Form(QtWidgets.QDialog):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "동작 설정"))
         Form.setWindowIcon(QtGui.QIcon("view/swipe.png"))
-        self.checkBox.setText(_translate("Form", "사용"))
+        Form.setStyleSheet("color: black;"
+                       "background-color: #fdd8a2;"
+                       "border-style: solid;"
+                       "border-color: #fdd8a2;"
+                       "border-radius: 5px;")
+        font = QtGui.QFont()
+        font.setFamily("야놀자 야체 R")
+        font.setPointSize(18)
+        
         self.label_3.setText(_translate("Form", "동작"))
-        self.checkBox_2.setText(_translate("Form", "사용"))
-        self.checkBox_3.setText(_translate("Form", "사용"))
-        self.checkBox_4.setText(_translate("Form", "사용"))
+        self.label_3.setFont(font)
+
+        font.setPointSize(15)
+        self.checkBox.setText(_translate("Form", "사용"))
+        self.checkBox.setFont(font)
+        self.checkBox_2.setText(_translate("Form", "사용 "))
+        self.checkBox_2.setFont(font)
+        self.checkBox_3.setText(_translate("Form", "사용 "))
+        self.checkBox_3.setFont(font)
+        self.checkBox_4.setText(_translate("Form", "사용 "))
+        self.checkBox_4.setFont(font)
+        
+        font.setPointSize(12)
+        self.comboBox.setFont(font)
+        self.comboBox_2.setFont(font)
+        self.comboBox_3.setFont(font)
+        self.comboBox_4.setFont(font)
         self.pushButton.setText(_translate("Form", "저장"))
+        self.pushButton.setStyleSheet("color: white;"
+	"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(255, 190, 11, 255), stop:1 rgba(251, 86, 7, 255));"
+	"border-radius: 20px;")
         self.pushButton_2.setText(_translate("Form", "취소"))
+        self.pushButton_2.setStyleSheet(
+            "background-color: #FFFFFF;"
+            "border-style: solid;"
+            "border-color: #ff901E;"
+            "border-radius: 20px;"
+            "border-width: 3px;")
         self.pushButton.clicked.connect(self.onOKButtonClicked)
         self.pushButton_2.clicked.connect(self.onCancelButtonClicked)
     def setOption(self):
@@ -126,15 +161,19 @@ class Option_Form(QtWidgets.QDialog):
         #첫번째라인셋팅
         self.comboBox.setCurrentIndex(int(data_json["1"]["action"]))
         self.checkBox.setChecked(bool(data_json["1"]["bool"]))
+        self.comboBox.setStyleSheet("border-width: 3px;")
         #두번째라인셋팅
         self.comboBox_2.setCurrentIndex(int(data_json["2"]["action"]))
         self.checkBox_2.setChecked(bool(data_json["2"]["bool"]))
+        self.comboBox_2.setStyleSheet("border-width: 3px;")
         #세번째라인셋팅
         self.comboBox_3.setCurrentIndex(int(data_json["3"]["action"]))
         self.checkBox_3.setChecked(bool(data_json["3"]["bool"]))
+        self.comboBox_3.setStyleSheet("border-width: 3px;")
         #네번째라인셋팅
         self.comboBox_4.setCurrentIndex(int(data_json["4"]["action"]))
         self.checkBox_4.setChecked(bool(data_json["4"]["bool"]))
+        self.comboBox_4.setStyleSheet("border-width: 3px;")
     def showModal(self):
         return super().exec_()
     def onOKButtonClicked(self):
