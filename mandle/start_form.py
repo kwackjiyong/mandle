@@ -82,7 +82,7 @@ class Ui_MainWindow(object):
                        "border-style: solid;"
                        "border-color: #ff901E;"
                        "border-radius: 20px")
-        self.pushButton_2.setText(_translate("MainWindow", "실행"))
+        self.pushButton_2.setText(_translate("MainWindow", "つ시작つ"))
         self.pushButton_3.setText(_translate("MainWindow", "종료"))
         self.menu.setTitle(_translate("MainWindow", "옵션"))
         self.actionDddfds.setText(_translate("MainWindow", "동작설정"))
@@ -98,13 +98,13 @@ class Ui_MainWindow(object):
             self.excute_form = 1
             print('excute')
             _translate = QtCore.QCoreApplication.translate
-            self.pushButton_2.setText(_translate("MainWindow", "중지"))
+            self.pushButton_2.setText(_translate("MainWindow", "ค^그만^ค"))
             mandle_run.start_run(self)
         else:
             self.excute_form = 0
             print('stop')
             _translate = QtCore.QCoreApplication.translate
-            self.pushButton_2.setText(_translate("MainWindow", "실행"))
+            self.pushButton_2.setText(_translate("MainWindow", "つ시작つ"))
             mandle_run.exit_pro(self)
     #종료버튼
     def exit_pro(self):
