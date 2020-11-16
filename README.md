@@ -1,15 +1,8 @@
 # mandle
 Hand Gesture Controller 
 PC용 - 모션인식 컨트롤러를 구현한 프로젝트입니다.
-
 카메라로 손 동작을 인식하여 PC를 조작 할 수 있게 해주는 컨트롤러 프로그램입니다.
 
-해당 프로젝트는 Tensorflow-lite를 사용한 MediaPipe사의 예제를 기반으로 만들어졌습니다.
+※ 해당 프로젝트는 MediaPipe사의 Tensorflow 모델을 사용하였습니다.
 
-MediaPipe의 머신러닝기반의 학습모델은 카메라만을 이용하여 손가락 각각의 관절과 세세한 포인트를 검출할 수 있게 해주었습니다.
-
-이를 이용하여 손가락 관절의 각도변화와 위치변화를 체크하여 모션인식을 구현하였습니다.
-
-모션마다 입력가능한 키셋을 커스터마이징 하는 기능까지 구현하였습니다.
-
-
+used:Python, Tensorflow, OpenCV, pyautogui
