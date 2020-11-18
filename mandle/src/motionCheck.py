@@ -73,7 +73,7 @@ def checkFinger(frame,points,prev_motion_num, prev_motion_point,data_json):
     
     # 5손가락에서 락큰롤 3손가락
     if(bool(data_json["4"]["bool"])):
-        if motionNum == 1+2+16 and dist < 10:
+        if motionNum == 1+2+16 and dist < 30:
                 if prev_motion_num ==  1+2+4+8+16:
                         cv2.putText(frame, "5->3", (10, 140), cv2.FONT_ITALIC, 2, (125,0,0))
                         pg.press(keyset[int(data_json["4"]["action"])])
