@@ -47,7 +47,7 @@ def checkFinger(frame,points,prev_motion_num, prev_motion_point,data_json):
     dist = math.sqrt((x1 - x2)**2 + (y1 - y2)**2)
 
      
-    keyset = [" ", "right", "left", "up","down","f"]
+    keyset = [" ", "right", "left", "up","down","f","c","k","esc"]
     # 엄지 1 검지 2 중지 4 약지 8 소지 16 비트합연산
     
     # 로큰롤

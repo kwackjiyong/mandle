@@ -31,7 +31,7 @@ class Option_Form(QtWidgets.QDialog):
 
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(60, 10, 31, 31))
-
+        combolist = ["key : spacebar","key : →","key : ←","key : ↑","key : ↓","Key : f","Key : c","Key : k","Key : esc"]
         #첫번째줄
         self.lbl = QtWidgets.QLabel(self.frame)
         self.lbl.setGeometry(QtCore.QRect(50, 50, 80, 80))
@@ -39,12 +39,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox.setGeometry(QtCore.QRect(200, 70, 111, 41))
         self.checkBox = QtWidgets.QCheckBox(self.frame)
         self.checkBox.setGeometry(QtCore.QRect(340, 65, 50, 50))
-        self.comboBox.addItem("key : spacebar")
-        self.comboBox.addItem("key : →")
-        self.comboBox.addItem("key : ←")
-        self.comboBox.addItem("key : ↑")
-        self.comboBox.addItem("key : ↓")
-        self.comboBox.addItem("Key : f")
+        self.comboBox.addItems(combolist)
 
         #두번째줄
         self.lbl2 = QtWidgets.QLabel(self.frame)
@@ -53,12 +48,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_2.setGeometry(QtCore.QRect(200, 180, 111, 41))
         self.checkBox_2 = QtWidgets.QCheckBox(self.frame)
         self.checkBox_2.setGeometry(QtCore.QRect(340, 175, 50, 50))
-        self.comboBox_2.addItem("key : spacebar")
-        self.comboBox_2.addItem("key : →")
-        self.comboBox_2.addItem("key : ←")
-        self.comboBox_2.addItem("key : ↑")
-        self.comboBox_2.addItem("key : ↓")
-        self.comboBox_2.addItem("Key : f")
+        self.comboBox_2.addItems(combolist)
 
         #세번째줄
         self.lbl3 = QtWidgets.QLabel(self.frame)
@@ -67,12 +57,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_3.setGeometry(QtCore.QRect(200, 290, 111, 41))
         self.checkBox_3 = QtWidgets.QCheckBox(self.frame)
         self.checkBox_3.setGeometry(QtCore.QRect(340, 285, 50, 50))
-        self.comboBox_3.addItem("key : spacebar")
-        self.comboBox_3.addItem("key : →")
-        self.comboBox_3.addItem("key : ←")
-        self.comboBox_3.addItem("key : ↑")
-        self.comboBox_3.addItem("key : ↓")
-        self.comboBox_3.addItem("Key : f")
+        self.comboBox_3.addItems(combolist)
 
         #네번째줄
         self.lbl4 = QtWidgets.QLabel(self.frame)
@@ -81,13 +66,7 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_4.setGeometry(QtCore.QRect(200, 400, 111, 41))
         self.checkBox_4 = QtWidgets.QCheckBox(self.frame)
         self.checkBox_4.setGeometry(QtCore.QRect(340, 395, 50, 50))
-        self.comboBox_4.addItem("key : spacebar")
-        self.comboBox_4.addItem("key : →")
-        self.comboBox_4.addItem("key : ←")
-        self.comboBox_4.addItem("key : ↑")
-        self.comboBox_4.addItem("key : ↓")
-        self.comboBox_4.addItem("Key : f")
-        
+        self.comboBox_4.addItems(combolist)
         font = QtGui.QFont()
         font.setFamily("야놀자 야체 R")
         font.setPointSize(18)
