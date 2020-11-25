@@ -102,7 +102,8 @@ class mandle_run():
             
 
             #인식 화면 출력
-            #cv2.imshow(WINDOW, frame)
+            if(bool(data_json["0"]["bool"])):
+                cv2.imshow(WINDOW, frame)
             
             #캡쳐정보다시 읽기
             hasFrame, frame = capture.read()

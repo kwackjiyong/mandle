@@ -31,6 +31,11 @@ class Option_Form(QtWidgets.QDialog):
 
         self.label_3 = QtWidgets.QLabel(self.frame)
         self.label_3.setGeometry(QtCore.QRect(60, 10, 31, 31))
+        
+        #인식화면 확인
+        self.checkBox_frame = QtWidgets.QCheckBox(self.frame)
+        self.checkBox_frame.setGeometry(QtCore.QRect(280, 5, 200, 50))
+        
         combolist = ["key : spacebar","key : →","key : ←","key : ↑","key : ↓","Key : f","Key : c","Key : k","Key : esc"]
         #첫번째줄
         self.lbl = QtWidgets.QLabel(self.frame)
@@ -98,10 +103,14 @@ class Option_Form(QtWidgets.QDialog):
         font.setFamily("야놀자 야체 R")
         font.setPointSize(18)
         
+        
+
         self.label_3.setText(_translate("Form", "동작"))
         self.label_3.setFont(font)
 
         font.setPointSize(15)
+        self.checkBox_frame.setText(_translate("Form", "인식화면 보기 "))
+        self.checkBox_frame.setFont(font)
         self.checkBox.setText(_translate("Form", "사용"))
         self.checkBox.setFont(font)
         self.checkBox_2.setText(_translate("Form", "사용 "))
@@ -137,6 +146,10 @@ class Option_Form(QtWidgets.QDialog):
         self.lbl4.setPixmap(QtGui.QPixmap("view/finger/5_3.png").scaledToWidth(80))
         #json읽어오기
         data_json = self.jsonRead()
+        
+        #화면인식 확인
+        self.checkBox_frame.setChecked(bool(data_json["0"]["bool"]))
+
         #첫번째라인셋팅
         self.comboBox.setCurrentIndex(int(data_json["1"]["action"]))
         self.checkBox.setChecked(bool(data_json["1"]["bool"]))
@@ -153,6 +166,8 @@ class Option_Form(QtWidgets.QDialog):
         self.comboBox_4.setCurrentIndex(int(data_json["4"]["action"]))
         self.checkBox_4.setChecked(bool(data_json["4"]["bool"]))
         self.comboBox_4.setStyleSheet("border-width: 3px;")
+
+        
     def showModal(self):
         return super().exec_()
     def onOKButtonClicked(self):
@@ -162,6 +177,7 @@ class Option_Form(QtWidgets.QDialog):
         self.reject()
     def jsonSave(self):
         option_data = {
+            "0":{"bool":self.checkBox_frame.isChecked()},
             "1":{"action":self.comboBox.currentIndex(),"bool":self.checkBox.isChecked()},
             "2":{"action":self.comboBox_2.currentIndex(),"bool":self.checkBox_2.isChecked()},
             "3":{"action":self.comboBox_3.currentIndex(),"bool":self.checkBox_3.isChecked()},
